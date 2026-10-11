@@ -2,7 +2,7 @@
 # SLE-4: Final Viva & Architecture Decision Record (ADR) Defense
 **Course:** 02AML204 – Introduction to Artificial Intelligence  
 **Class:** SY B.Tech CSE (AI & ML) | Division: A  
-**Semester:** 3  
+**Semester:** III 
 **Student Name:** Manthan Amol Soni  
 **PRN:** 25UAM032  
 
@@ -10,38 +10,32 @@
 
 ## 📌 Repository Overview
 
-This repository documents the deliverables for **SLE-4 (Self-Learning Exercise 4)**, the culminating synthesis of the course practical sequence (SLE-1 through SLE-4).
+This repository hosts the final deliverables for **SLE-4 (Self-Learning Exercise 4)**, which serves as the capstone evaluation for the course practical progression (SLE-1 through SLE-4).
 
-The primary objective of SLE-4 is to record and defend a formal **Architecture Decision Record (ADR)** justifying the primary search strategy selection for the **3×3 8-Puzzle Solver**, grounded in:
-1. **Empirical profiling measurements** collected during **SLE-2** using Python's `timeit` and `py-spy`.
-2. **Structural container and component boundaries** established in the **C4 Architecture Model** during **SLE-3**.
-
----
-
-## 🔗 Related Repositories & References
-
-* **SLE-2 (Profiling & Benchmarking):** [manthansoni13/SLE2_02AML204](https://github.com/manthansoni13/SLE2_02AML204.git)
-* **SLE-3 (C4 System Architecture):** [manthansoni13/IAI-SLE3-25UAM032](https://github.com/manthansoni13/IAI-SLE3-25UAM032.git)
+The core objective of SLE-4 is to formally document and defend an **Architecture Decision Record (ADR)** that justifies the key algorithmic and structural decisions adopted for the **3×3 8-Puzzle Solver System**. This decision is directly grounded in:
+1. **Empirical Benchmarking Metrics (SLE-2):** Real execution times captured using `time.perf_counter()` and node expansions verified via `py-spy` call-stack flamegraphs.
+2. **C4 Architectural Modeling (SLE-3):** Modular decomposition across Context, Container, Component, and Code levels isolating the Search Engine, Frontier Memory, and State Manager.
 
 ---
 
-## 🏗️ Architecture Decision Summary
+## 🔗 Related Repositories
 
-* **ADR Title:** Selection of BFS Over DFS for State-Space Exploration in the 8-Puzzle Solver
+* **SLE-2 (Performance Profiling & Flamegraphs):** [manthansoni13/SLE2_02AML204](https://github.com/manthansoni13/SLE2_02AML204.git)
+* **SLE-3 (Full C4 Architecture Model):** [manthansoni13/IAI-SLE3-25UAM032](https://github.com/manthansoni13/IAI-SLE3-25UAM032.git)
+
+---
+
+## 🏗️ Architecture Decision Record (Summary)
+
+* **ADR Title:** Selection of Breadth-First Search (BFS) over Depth-First Search (DFS) for State-Space Exploration in the 3×3 8-Puzzle Solver
 * **Status:** Accepted
-* **Core Decision:** Adopt Breadth-First Search (BFS) as the default search engine strategy using a FIFO queue (`collections.deque`) and a closed hash set for visited state detection, while retaining Depth-First Search (DFS) strictly as an alternative baseline.
-* **Empirical Evidence (from SLE-2):**
-  * **BFS** reached the goal expanding **33 nodes** in **0.0541 ms**.
-  * **DFS** reached the goal expanding **2,927 nodes** in **3.2204 ms**.
-  * BFS achieved a **~60× faster execution time** and expanded **~88× fewer states** on the identical initial-to-goal configuration.
+* **Core Decision:** Adopt Breadth-First Search (BFS) utilizing a FIFO queue (`collections.deque`) and an in-memory hash set for closed-state tracking as the primary operational search engine. Retain Depth-First Search (with a depth limit of $d=15$) solely as a secondary benchmark baseline.
+* **Empirical Grounding:** In an identical 5-move optimal test configuration, BFS reached the goal in **2.152 ms** expanding **74 nodes**, whereas DFS required **32.418 ms** and expanded **1,280 nodes**—demonstrating a **~15× execution speedup** and an **~17× reduction in state expansions**.
 
 ---
 
 ## 📂 Repository Contents
 
 ```text
-├── README.md                           # Project documentation & summary
-├── AI_CONTRIBUTION_LOG.md              # Detailed human vs. AI contribution log
-├── SLE4_25UAM032_Manthan_Amol_Soni.docx # Formal Word submission file
-└── docs/
-    └── viva_preparation.md            # Quick-reference notes for viva defense
+├── README.md                           # Overview, benchmark tables, and architecture context
+├── AI_CONTRIBUTION_LOG.md              # Granular record of human vs. AI contributions
