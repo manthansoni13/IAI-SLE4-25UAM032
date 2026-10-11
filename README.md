@@ -2,7 +2,7 @@
 # SLE-4: Final Viva & Architecture Decision Record (ADR) Defense
 **Course:** 02AML204 – Introduction to Artificial Intelligence  
 **Class:** SY B.Tech CSE (AI & ML) | Division: A  
-**Semester:** VI  
+**Semester:** 3  
 **Student Name:** Manthan Amol Soni  
 **PRN:** 25UAM032  
 
