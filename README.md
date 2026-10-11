@@ -22,10 +22,6 @@ The primary objective of SLE-4 is to record and defend a formal **Architecture D
 
 * **SLE-2 (Profiling & Benchmarking):** [manthansoni13/SLE2_02AML204](https://github.com/manthansoni13/SLE2_02AML204.git)
 * **SLE-3 (C4 System Architecture):** [manthansoni13/IAI-SLE3-25UAM032](https://github.com/manthansoni13/IAI-SLE3-25UAM032.git)
-* **Peer Reference Repositories:**
-  * [koustubhchorade-hub/IAI_SLE-4_25UAM042](https://github.com/koustubhchorade-hub/IAI_SLE-4_25UAM042.git)
-  * [aniketmane2007/SLE---2-AI---NEW---Profilling](https://github.com/aniketmane2007/SLE---2-AI---NEW---Profilling)
-  * [aniketmane2007/IAI-Agent-25UAM045](https://github.com/aniketmane2007/IAI-Agent-25UAM045)
 
 ---
 
